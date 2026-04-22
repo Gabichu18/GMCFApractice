@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CFA Level I — Study Platform</title>
+  <meta name="description" content="Interactive CFA Level I exam practice platform with 100+ questions, mock exams, statistics, and weakness tracking across all 10 subjects." />
+  <meta name="theme-color" content="#0a0b0f" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- MathJax for formulas -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$']] },
+      startup: { typeset: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div id="app">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────── -->
+  <aside id="sidebar">
+    <div class="sidebar-logo">
+      <h2>📚 CFA Level I</h2>
+      <small>Study Platform · 2026</small>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">Main</div>
+      <div class="nav-item" data-view="dashboard">
+        <span class="nav-icon">🏠</span> Dashboard
+      </div>
+      <div class="nav-item" data-view="subjects">
+        <span class="nav-icon">📖</span> All Subjects
+      </div>
+      <div class="nav-item" data-view="stats">
+        <span class="nav-icon">📊</span> My Statistics
+      </div>
+
+      <div class="nav-section" style="margin-top:12px">Subjects</div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'ETHICS'})">
+        <span class="nav-icon">⚖️</span> Ethics
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'QUANT'})">
+        <span class="nav-icon">📊</span> Quantitative Methods
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'ECONOMICS'})">
+        <span class="nav-icon">🌐</span> Economics
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'FSA'})">
+        <span class="nav-icon">📋</span> Financial Statement Analysis
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'CORPORATE'})">
+        <span class="nav-icon">🏢</span> Corporate Issuers
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'EQUITY'})">
+        <span class="nav-icon">📈</span> Equity
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'FIXED_INCOME'})">
+        <span class="nav-icon">🏦</span> Fixed Income
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'DERIVATIVES'})">
+        <span class="nav-icon">🔄</span> Derivatives
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'ALT_INV'})">
+        <span class="nav-icon">💎</span> Alternative Investments
+      </div>
+      <div class="nav-item" onclick="renderView('subject',{subject:'PORTFOLIO'})">
+        <span class="nav-icon">🎯</span> Portfolio Management
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="exam-cta" onclick="renderView('exam')">📝 Generate Mock Exam</button>
+    </div>
+  </aside>
+
+  <!-- ── Content Wrapper ──────────────────────────────────────── -->
+  <div id="content-wrapper">
+    <!-- Topbar -->
+    <header class="topbar">
+      <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+      <span class="topbar-title">CFA Level I Study Platform</span>
+    </header>
+
+    <!-- Main Content (rendered by JS) -->
+    <main id="main-content" class="main-content"></main>
+  </div>
+
+</div>
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<!-- Scripts (order matters) -->
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
